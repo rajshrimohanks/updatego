@@ -19,6 +19,14 @@ Just clone and run `go build`.
 
 ## Usage
 
+You need to run the utility with `sudo` since it is setting up your go inside `/usr/local`.
+
+```bash
+sudo updatego -version 1.15.5
+```
+
+All options:
+
 ```plaintext
   -go-dir string
         the directory inside which the go archive should be extracted (default "/usr/local")

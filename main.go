@@ -16,13 +16,15 @@ import (
 func main() {
 
 	// Flags
-	version := flag.String("version", "1.15.5", "the go version to fetch")
+	version := flag.String("version", "1.15.6", "the go version to fetch")
 	goInstallDirectory := flag.String("go-dir", "/usr/local", "the directory inside which the go archive should be extracted")
 	flag.Parse()
 
-	fileName := "go" + (*version) + ".linux-amd64.tar.gz"
-	newVersionURL := "https://golang.org/dl/" + fileName
-	downloadedFile := filepath.Join("/tmp", fileName)
+	var (
+		fileName       = "go" + (*version) + ".linux-amd64.tar.gz"
+		newVersionURL  = "https://golang.org/dl/" + fileName
+		downloadedFile = filepath.Join("/tmp", fileName)
+	)
 
 	// Download file
 	err := downloadFile(downloadedFile, newVersionURL)
@@ -58,6 +60,7 @@ func main() {
 		log.Fatalf("an error occurred while deleting the downloaded file: %s", err.Error())
 	}
 	log.Printf("file deleted: %s", downloadedFile)
+	log.Printf("done")
 }
 
 // downloadFile fetches a file from url and puts it at path

@@ -5,6 +5,7 @@ An absolutely unnecessary utility to install/update Go in **my** machine. It pro
 - [updatego](#updatego)
   - [Pre-requisites](#pre-requisites)
   - [Build](#build)
+  - [Install](#install)
   - [Usage](#usage)
   - [Perks](#perks)
   - [Why is this needed?](#why-is-this-needed)
@@ -23,6 +24,17 @@ This will let you take advantage of using Go modules to manage packages and your
 ## Build
 
 Just clone and run `go build`.
+
+## Install
+
+If you don't want to build and manage your binary yourself, you can just use the below commands to directly setup the tool in your system:
+
+```bash
+go get -u github.com/rajshrimohanks/updatego
+sudo mv $(go env GOPATH)/bin/updatego /usr/local/bin/
+```
+
+Now you can just do `sudo updatego` to run the utility.
 
 ## Usage
 

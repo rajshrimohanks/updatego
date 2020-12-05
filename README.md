@@ -2,6 +2,13 @@
 
 An absolutely unnecessary utility to install/update Go in **my** machine. It probably won't work for you unless you use a similar setup as mine.
 
+- [updatego](#updatego)
+  - [Pre-requisites](#pre-requisites)
+  - [Build](#build)
+  - [Usage](#usage)
+  - [Perks](#perks)
+  - [Why is this needed?](#why-is-this-needed)
+
 ## Pre-requisites
 
 For this to work, you need to have Go install to in `/usr/local`. You also should have the following lines added in your `~/.bashrc`:
@@ -19,7 +26,7 @@ Just clone and run `go build`.
 
 ## Usage
 
-You need to run the utility with `sudo` since it is setting up your go inside `/usr/local`.
+You need to run the utility with `sudo` since it is setting up your Go inside `/usr/local`.
 
 ```bash
 sudo updatego -version 1.15.5
@@ -41,3 +48,7 @@ Since all we are doing is just deleting the existing go setup and extracting the
 ```bash
 sudo updatego -version 1.14.0
 ```
+
+## Why is this needed?
+
+I totally have no idea. You actually need Go to build this in the first place. You could also use `go get` to pull in a new version of Go. But `go get` will only bring your new version as a package. It won't replace your primary install. This utility will do that. So I guess, that's a usecase? :P

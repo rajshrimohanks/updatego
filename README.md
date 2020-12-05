@@ -33,3 +33,11 @@ All options:
   -version string
         the go version to fetch (default "1.15.5")
 ```
+
+## Perks
+
+Since all we are doing is just deleting the existing go setup and extracting the new one, we can use this to roll back go versions as well (_as if this wasn't obvious, duh!_)
+
+```bash
+sudo updatego -version 1.14.0
+```
